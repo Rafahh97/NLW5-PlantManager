@@ -29,7 +29,8 @@ interface PlantProps{
     frequency: {
         times: number;
         repeat_every: string;
-};
+    }
+}
 
 export function PlantSelect(){
     const [enviroments, setEnviroments] = useState<EnviromentProps[]>([]);
@@ -91,6 +92,7 @@ export function PlantSelect(){
                     <PlantCardPrimary data={item}/>
                 )}
                 showsVerticalScrollIndicator={false}
+                numColumns={2}
                 />
             </View>
 
@@ -136,4 +138,5 @@ const styles = StyleSheet.create({
         paddingHorizontal: 32,
         justifyContent: 'center',
     },
+
 })
