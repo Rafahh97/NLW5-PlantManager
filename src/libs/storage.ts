@@ -30,11 +30,11 @@ export async function savePlant(plant: PlantProps) : Promise<void> {
         const now = new Date();
 
         const { times, repeat_every } = plant.frequency;
-        if(repeat_every === 'weeks') {
+        if(repeat_every === "week") {
             const interval = Math.trunc(7 / times)
             nextTime.setDate(now.getDate() + interval);
-        //}else {
-            //nextTime.setDate(now.getDate() + 1);
+        }else {
+            nextTime.setDate(now.getDate() + 1);
         }
 
         const seconds = Math.abs(
