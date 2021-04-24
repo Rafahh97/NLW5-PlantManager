@@ -27,11 +27,11 @@ export default function App(){
     //return () => subscription.remove();
 
     async function notifications() {
-      const data = await Notifications.getAllScheduledNotificationsAsync();
-      console.log("NOTIFICAÇÕES AGENDADAS #######")
-      console.log(data);
+      //const data = await Notifications.getAllScheduledNotificationsAsync();
+      //console.log("NOTIFICAÇÕES AGENDADAS #######")
+      //console.log(data);
 
-      // await Notifications.cancelAllScheduledNotificationsAsync();
+      await Notifications.cancelAllScheduledNotificationsAsync();
     }
 
     notifications();
