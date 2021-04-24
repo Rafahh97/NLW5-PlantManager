@@ -16,20 +16,15 @@ export default function App(){
   })
 
   useEffect(() => {
-    //const subscription = Notifications.addNotificationReceivedListener(
-     // async notifications => { 
-        //const data = notifications.request.content.data.plant as PlantProps;
-        //console.log(data);
-      //}
-    //)
-    //return () => subscription.remove();
-  async function notifications(){
-    const data = await Notifications.getAllScheduledNotificationsAsync();
-    console.log("##### Notificações agendadas #####");
-    console.log(data)
-  }
-  notifications()
+    const subscription = Notifications.addNotificationReceivedListener(
+      async notifications => { 
+        const data = notifications.request.content.data.plant as PlantProps;
+        console.log(data);
+      }
+    )
+    return () => subscription.remove();
 
+    
   },[])
 
   if(!fontsLoaded)
